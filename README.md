@@ -1,39 +1,81 @@
-Emotion Classification of Natural Language
+# Emotion Classification of Natural Language
 
-This repository contains the implementation of a natural language emotion classification project. This project was developed as part of the CS 3780/5780 Creative Project, showcasing the application of machine learning techniques to classify emotions from textual data.
+This repository contains the implementation of a Natural Language Processing (NLP) project focused on **emotion classification**. Developed as part of the **CS 3780/5780 Creative Project**, the goal was to explore the application of modern machine learning techniques to detect emotions in textual data.
 
-Project Overview
+---
 
-Emotion classification is a crucial aspect of natural language processing (NLP) that enables machines to understand and respond to human emotions. This project:
-Implements emotion classification using advanced machine learning frameworks.
-Explores techniques like data preprocessing, feature extraction, and model training.
-Leverages popular Python libraries, such as TensorFlow, PyTorch, and scikit-learn, for efficient computation and experimentation.
+## 📌 Project Overview
 
-Problem Formulation
+Emotion classification is a vital subdomain of NLP, enabling machines to interpret and respond to human emotions embedded in text. This project demonstrates:
 
-This problem is a multi-class text classification task, where the objective is to classify a piece of text into one of 28 predefined emotion classes. The goal was to design a model that could predict the emotion expressed in a given text based on its content.
+- Implementation of multi-class emotion classification using supervised learning.
+- Utilization of key NLP techniques including data preprocessing, feature extraction, and model training.
+- Experimentation with cutting-edge Python libraries such as **TensorFlow**, **PyTorch**, and **scikit-learn**.
 
-Learning Methods Used
+---
 
-Two learning methods were chosen for this project:
+## 🧠 Problem Formulation
 
-Convolutional Neural Networks (CNN):
+The task is formulated as a **multi-class text classification problem**, where each input sentence must be categorized into one of **28 predefined emotion classes**.
 
-CNN is a type of deep learning and supervised learning method. Since we are working with labeled data where each piece of text is associated with an emotion class (label), the learning method chosen is supervised learning.
-Within the code, Bag of Words (BoW) extraction was used for feature extraction. BoW counts the frequency of each word in a document, providing a direct representation of text that the CNN can process. While BoW does not account for word order, it is simple and often works well for text classification tasks.
+Given a sentence, the objective is to predict the dominant emotion expressed based on its semantic and syntactic features.
 
-Transformer Model - DistilBERT:
+---
 
-DistilBERT, a lightweight version of BERT, was selected for its ability to effectively classify texts into 28 emotion labels. Like the CNN model, DistilBERT uses supervised learning.
-Unlike BoW, DistilBERT leverages attention mechanisms to capture the relationships between words, making it particularly suited for tasks involving nuanced text like emotion classification. This approach improves the accuracy of predictions by considering word context and order.
+## 🛠️ Methods Used
 
-Model Selection
+### 1. Convolutional Neural Network (CNN)
 
-For the CNN model, we prioritized simplicity and efficiency in handling labeled datasets, choosing BoW for its straightforward implementation.
-For the Transformer model, DistilBERT was selected due to its balance between performance and computational efficiency, offering robust contextual understanding essential for emotion classification.
+- A **supervised learning** approach was employed using a CNN architecture.
+- Feature extraction was handled through the **Bag of Words (BoW)** model, which captures word frequency to generate input features.
+- Although BoW does not preserve word order, it offers simplicity and effectiveness in text classification tasks.
 
-Performance Evaluation
+### 2. Transformer-Based Model: DistilBERT
 
-The test performance of both models was evaluated against the baseline "Tiny Piney."
-CNN Model: Scored a 0.66, which does not reach the first baseline "Tiny Piney."
-DistilBERT Model: Scored a 0.77, successfully reaching the baseline "Tiny Piney."
+- A compact and efficient version of BERT, **DistilBERT** leverages attention mechanisms to understand word context and relationships.
+- It was chosen for its high accuracy and relatively low computational cost.
+- DistilBERT processes the text holistically, capturing nuanced emotional expressions that traditional models might overlook.
+
+---
+
+## 🔍 Model Selection Rationale
+
+- **CNN with BoW** was selected for its ease of implementation and suitability for structured, labeled datasets.
+- **DistilBERT** was preferred for its deep contextual understanding and strong performance in capturing emotion-rich expressions in natural language.
+
+---
+
+## 📊 Performance Evaluation
+
+Model performance was assessed against the baseline model **"Tiny Piney"**.
+
+| Model         | Accuracy | Baseline Reached     |
+|---------------|----------|----------------------|
+| CNN (BoW)     | 0.66     | ❌ Below baseline     |
+| DistilBERT    | 0.77     | ✅ Above baseline     |
+
+DistilBERT successfully surpassed the performance threshold set by the baseline, showcasing the benefits of transformer-based models in emotion classification tasks.
+
+---
+
+## 📂 Tech Stack
+
+- Python 3.x  
+- TensorFlow / Keras  
+- PyTorch / HuggingFace Transformers  
+- scikit-learn  
+- Pandas / NumPy  
+
+---
+
+## 🚀 Getting Started
+
+To reproduce the results:
+
+```bash
+# Clone the repository
+git clone https://github.com/your-username/your-repo-name.git
+cd your-repo-name
+
+# Install dependencies
+pip install -r requirements.txt
